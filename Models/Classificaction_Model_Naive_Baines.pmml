@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="Asus">
+    <Application name="KNIME" version="4.7.0"/>
+  </Header>
+  <DataDictionary numberOfFields="5">
+    <DataField name="SepalLengthCm" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="4.3" rightMargin="7.9"/>
+    </DataField>
+    <DataField name="SepalWidthCm" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="2.0" rightMargin="4.4"/>
+    </DataField>
+    <DataField name="PetalLengthCm" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="6.9"/>
+    </DataField>
+    <DataField name="PetalWidthCm" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.1" rightMargin="2.5"/>
+    </DataField>
+    <DataField name="Species" optype="categorical" dataType="string">
+      <Value value="Iris-setosa"/>
+      <Value value="Iris-versicolor"/>
+      <Value value="Iris-virginica"/>
+    </DataField>
+  </DataDictionary>
+  <NaiveBayesModel isScorable="true" modelName="KNIME PMML Naive Bayes model" threshold="1.0E-4" functionName="classification">
+    <MiningSchema>
+      <MiningField name="SepalLengthCm" invalidValueTreatment="asIs"/>
+      <MiningField name="SepalWidthCm" invalidValueTreatment="asIs"/>
+      <MiningField name="PetalLengthCm" invalidValueTreatment="asIs"/>
+      <MiningField name="PetalWidthCm" invalidValueTreatment="asIs"/>
+      <MiningField name="Species" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <BayesInputs>
+      <BayesInput fieldName="SepalLengthCm">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Iris-versicolor">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="17"/>
+            <GaussianDistribution mean="5.982352941176471" variance="0.37529411764705883"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-virginica">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="8"/>
+            <GaussianDistribution mean="6.7" variance="0.21428571428571433"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-setosa">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="20"/>
+            <GaussianDistribution mean="4.930000000000001" variance="0.10642105263157887"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="SepalWidthCm">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Iris-versicolor">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="17"/>
+            <GaussianDistribution mean="2.7176470588235295" variance="0.10154411764705885"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-virginica">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="8"/>
+            <GaussianDistribution mean="2.8625" variance="0.1398214285714286"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-setosa">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="20"/>
+            <GaussianDistribution mean="3.3750000000000004" variance="0.1461842105263158"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="PetalLengthCm">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Iris-versicolor">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="17"/>
+            <GaussianDistribution mean="4.164705882352941" variance="0.3511764705882352"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-virginica">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="8"/>
+            <GaussianDistribution mean="5.4375" variance="0.25696428571428565"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-setosa">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="20"/>
+            <GaussianDistribution mean="1.435" variance="0.013973684210526319"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+      <BayesInput fieldName="PetalWidthCm">
+        <Extension name="numberOfMissingValues" value="0"/>
+        <TargetValueStats>
+          <TargetValueStat value="Iris-versicolor">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="17"/>
+            <GaussianDistribution mean="1.2764705882352942" variance="0.04691176470588235"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-virginica">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="8"/>
+            <GaussianDistribution mean="1.9625" variance="0.13125"/>
+          </TargetValueStat>
+          <TargetValueStat value="Iris-setosa">
+            <Extension name="MissingValCounter" value="0"/>
+            <Extension name="noOfRows" value="20"/>
+            <GaussianDistribution mean="0.21000000000000005" variance="0.00831578947368421"/>
+          </TargetValueStat>
+        </TargetValueStats>
+      </BayesInput>
+    </BayesInputs>
+    <BayesOutput fieldName="Species">
+      <Extension name="numberOfMissingValues" value="0"/>
+      <TargetValueCounts>
+        <TargetValueCount value="Iris-setosa" count="20.0"/>
+        <TargetValueCount value="Iris-versicolor" count="17.0"/>
+        <TargetValueCount value="Iris-virginica" count="8.0"/>
+      </TargetValueCounts>
+    </BayesOutput>
+  </NaiveBayesModel>
+</PMML>
